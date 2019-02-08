@@ -10,7 +10,7 @@ This package extends Vega's set of data format parsers to support the type `"arr
 
 To use this package in a web application, include the compiled `vega-loader-arrow.min.js` JavaScript file as a script import on a web page, alongside an import for the [Apache Arrow JavaScript API](https://github.com/apache/arrow/tree/master/js).
 
-Import the vega-loader-arrow package _after_ Vega and Arrow have been imported. For example, loading all libraries from the unpkg CDN:
+Import the vega-loader-arrow package _after_ Vega and Arrow have been imported. For example, loading all libraries from a CDN:
 
 ```html
   <script src="https://cdn.jsdelivr.net/npm/vega"></script>
