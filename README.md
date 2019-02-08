@@ -1,6 +1,8 @@
 # vega-loader-arrow
 
-Data loading and object proxies for the [Apache Arrow](https://arrow.apache.org/) format. This package extends Vega's set of data format parsers to support the type `"arrow"`.
+Data loading and object proxies for the [Apache Arrow](https://arrow.apache.org/) format.
+
+This package extends Vega's set of data format parsers to support the type `"arrow"`. It can also be used in a stand-alone fashion to create proxy objects representing each row in an Arrow table.
 
 ## Usage Instructions
 
@@ -52,4 +54,6 @@ For more about the dataset above, see ["Introduction to Apache Arrow"](https://b
 vega.format.<b>arrow</b>(<i>data</i>)
 [<>](https://github.com/vega/vega/blob/master/src/arrow.js "Source")
 
-Returns an array of data objects for the input *data* (or an array of multiple data batches) in the Apache Arrow binary format. The returned data objects include properties for all named fields; property access then proxies to a lookup on an underlying Arrow column. Attempts to overwrite named field properties will result in thrown errors. Writes to new properties not included in the Arrow table schema are supported.
+Returns an array of data objects for the input *data* in the Apache Arrow binary format. The input *data* should be either a buffer (e.g., `Uint8Array`) or an array of buffers containing the binary data.
+
+The returned data objects include properties for all named fields; property access then proxies to a lookup on an underlying Arrow column. Attempts to overwrite named field properties will result in thrown errors. Writes to new properties not included in the Arrow table schema are supported.
