@@ -13,9 +13,9 @@ To use this package in a web application, include the compiled `vega-loader-arro
 Import the vega-loader-arrow package _after_ Vega and Arrow have been imported. For example, loading all libraries from the unpkg CDN:
 
 ```html
-  <script src="https://unpkg.com/vega"></script>
-  <script src="https://unpkg.com/apache-arrow"></script>
-  <script src="https://unpkg.com/vega-loader-arrow"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apache-arrow/Arrow.es2015.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-loader-arrow"></script>
 ```
 
 ### Node.js or Bundle Use
