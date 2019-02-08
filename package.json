@@ -1,6 +1,6 @@
 {
   "name": "vega-loader-arrow",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Data loader for the Apache Arrow format.",
   "keywords": [
     "vega",
@@ -30,8 +30,8 @@
   "devDependencies": {
     "eslint": "^5.13.0",
     "rimraf": "^2.6.3",
-    "rollup": "1.1.2",
+    "rollup": "^1.1.2",
     "tape": "^4.9.2",
-    "terser": "^3.16.0"
+    "terser": "^3.16.1"
   }
 }
