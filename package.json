@@ -1,0 +1,37 @@
+{
+  "name": "vega-loader-arrow",
+  "version": "1.0.0",
+  "description": "Vega data loader for the Apache Arrow format.",
+  "keywords": [
+    "vega",
+    "loader",
+    "arrow"
+  ],
+  "license": "BSD-3-Clause",
+  "author": "Jeffrey Heer (http://idl.cs.washington.edu)",
+  "main": "build/vega-loader-arrow.js",
+  "module": "index",
+  "unpkg": "build/vega-loader-arrow.min.js",
+  "jsdelivr": "build/vega-loader-arrow.min.js",
+  "repository": "vega/vega-loader-arrow",
+  "scripts": {
+    "rollup": "rollup -f umd -g apache-arrow:apache-arrow -n vega.format -o build/vega-loader-arrow.js -- index.js",
+    "prebuild": "rimraf build && mkdir build",
+    "build": "yarn rollup",
+    "postbuild": "terser build/vega-loader-arrow.js -c -m -o build/vega-loader-arrow.min.js",
+    "pretest": "yarn prebuild && yarn rollup",
+    "test": "tape 'test/**/*-test.js' && eslint index.js src test",
+    "prepublishOnly": "yarn test && yarn build",
+    "postpublish": "git push && git push --tags"
+  },
+  "dependencies": {
+    "apache-arrow": "~0.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "rimraf": "^2.6.3",
+    "rollup": "1.1.2",
+    "tape": "^4.9.2",
+    "terser": "^3.16.0"
+  }
+}
