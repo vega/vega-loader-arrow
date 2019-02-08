@@ -2,7 +2,7 @@
 
 Data loading and object proxies for the [Apache Arrow](https://arrow.apache.org/) format.
 
-This package extends Vega's set of data format parsers to support the type `"arrow"`. It can also be used in a stand-alone fashion to create proxy objects representing each row in an Arrow table.
+This package extends Vega's set of data format parsers to support the type `"arrow"` in Vega version 5.0 and higher. It can also be used in a stand-alone fashion to create proxy objects representing each row in an Arrow table.
 
 ## Usage Instructions
 
