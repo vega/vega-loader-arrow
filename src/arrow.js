@@ -1,24 +1,21 @@
 import {Table} from 'apache-arrow';
 
-export default function(arrow) {
-  const table = Table.from(Array.isArray(arrow) ? arrow : [arrow]),
-        nrows = table.length,
-        data = Array(nrows),
-        row = rowObject(table);
+export default function arrow(data) {
+  const table = Table.from(Array.isArray(data) ? data : [data]),
+        proxy = rowProxy(table),
+        rows = Array(table.length);
 
-  table.scan(i => data[i] = row(i));
+  table.scan(i => rows[i] = proxy(i));
 
-  return data;
+  return rows;
 }
 
-function rowObject(table) {
-  const fields = table.schema.fields.map(d => d.name);
+arrow.responseType = 'arrayBuffer';
 
-  const ctr = function(index) {
-    this.__rowIndex__ = index;
-  };
-
-  const proto = ctr.prototype;
+function rowProxy(table) {
+  const fields = table.schema.fields.map(d => d.name),
+        ctr = function(index) { this.__rowIndex__ = index; },
+        proto = ctr.prototype;
 
   Object.defineProperty(proto, '__rowIndex__', {
     value: -1,
@@ -39,7 +36,5 @@ function rowObject(table) {
     });
   });
 
-  return function(i) {
-    return new ctr(i);
-  }
+  return i => new ctr(i);
 }
