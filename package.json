@@ -1,7 +1,7 @@
 {
   "name": "vega-loader-arrow",
-  "version": "1.0.0",
-  "description": "Vega data loader for the Apache Arrow format.",
+  "version": "0.0.1",
+  "description": "Data loader for the Apache Arrow format.",
   "keywords": [
     "vega",
     "loader",
@@ -15,7 +15,7 @@
   "jsdelivr": "build/vega-loader-arrow.min.js",
   "repository": "vega/vega-loader-arrow",
   "scripts": {
-    "rollup": "rollup -f umd -g apache-arrow:apache-arrow -n vega.format -o build/vega-loader-arrow.js -- index.js",
+    "rollup": "rollup -f umd -g apache-arrow:Arrow -n vega.format -o build/vega-loader-arrow.js -- index.js",
     "prebuild": "rimraf build && mkdir build",
     "build": "yarn rollup",
     "postbuild": "terser build/vega-loader-arrow.js -c -m -o build/vega-loader-arrow.min.js",
