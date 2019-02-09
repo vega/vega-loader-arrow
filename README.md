@@ -32,7 +32,7 @@ formats('arrow', arrow);
 
 ### Vega Specifications
 
-Once vega-arrow-loader has been imported and registered, Vega specs can reference and load Arrow data like so:
+Once vega-loader-arrow has been imported and registered, Vega specs can reference and load Arrow data like so:
 
 ```json
 {
@@ -54,6 +54,6 @@ For more about the dataset above, see ["Introduction to Apache Arrow"](https://b
 vega.format.<b>arrow</b>(<i>data</i>)
 [<>](https://github.com/vega/vega/blob/master/src/arrow.js "Source")
 
-Returns an array of data objects for the input *data* in the Apache Arrow binary format. The input *data* should be either a buffer (e.g., `Uint8Array`) or an array of buffers containing the binary data.
+Returns an array of data objects for the input *data* in the Apache Arrow binary format. The input *data* should be either a buffer (e.g., `Uint8Array`) or an array of buffers containing Arrow-formatted data.
 
-The returned data objects include properties for all named fields; property access then proxies to a lookup on an underlying Arrow column. Attempts to overwrite named field properties will result in thrown errors. Writes to new properties not included in the Arrow table schema are supported.
+The returned data objects include properties for all named fields; property access results in a lookup against an underlying Arrow column. If the Arrow table includes multiple fields with the same name, the proxy object accesses the column with the lowest index. An error is thrown if a caller attempts to set values on named field properties. Writes to properties other than Arrow field names are supported, and will not affect the underlying Arrow data.
