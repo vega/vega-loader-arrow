@@ -19,8 +19,8 @@ function rowProxy(table) {
         Row = function(index) { this[RowIndex] = index; },
         proto = Row.prototype;
 
-  fields.forEach(name => {
-    const column = table.getColumn(name);
+  fields.forEach((name, index) => {
+    const column = table.getColumnAt(index);
 
     // skip columns with duplicate names
     if (proto.hasOwnProperty(name)) return;
@@ -30,7 +30,7 @@ function rowProxy(table) {
         return column.get(this[RowIndex]);
       },
       set: function() {
-        throw Error('Can not overwrite Arrow data field values.');
+        throw Error('Arrow field values can not be overwritten.');
       },
       enumerable: true
     });
