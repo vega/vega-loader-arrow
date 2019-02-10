@@ -3,7 +3,7 @@ import {Table} from 'apache-arrow';
 const RowIndex = Symbol('rowIndex');
 
 export default function arrow(data) {
-  const table = Table.from(Array.isArray(data) ? data : [data]),
+  const table = arrowTable(data),
         proxy = rowProxy(table),
         rows = Array(table.length);
 
@@ -13,6 +13,11 @@ export default function arrow(data) {
 }
 
 arrow.responseType = 'arrayBuffer';
+
+function arrowTable(data) {
+  return data instanceof Table ? data
+    : Table.from(Array.isArray(data) ? data : [data]);
+}
 
 function rowProxy(table) {
   const fields = table.schema.fields.map(d => d.name),

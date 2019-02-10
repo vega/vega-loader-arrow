@@ -2,17 +2,14 @@ const tape = require('tape'),
       {Table} = require('apache-arrow'),
       {arrow} = require('../');
 
-tape('Arrow reader should read Apache Arrow data', function(test) {
-  const nrows = 20,
-        blob = generateArrowData(nrows),
-        table = Table.from([blob]), // Arrow API Table
-        data = arrow(blob), // Vega-friendly objects for each row
-        datum = data[0];
+function testProxyMatch(test, table, data) {
+  const datum = data[0],
+        nrows = table.length,
+        fields = [];
 
-  test.equal(data.length, table.length);
+  test.equal(data.length, nrows);
 
   // collect fields from first data object
-  const fields = [];
   for (let f in datum) fields.push(f);
 
   // test that fields match table schema
@@ -26,9 +23,20 @@ tape('Arrow reader should read Apache Arrow data', function(test) {
     const d = data[row];
     fields.forEach(f => test.deepEqual(d[f], table.getColumn(f).get(row)));
   }
+}
+
+tape('Arrow reader should read Apache Arrow data', function(test) {
+  const nrows = 20,
+        blob = generateArrowData(nrows),
+        table = Table.from([blob]), // Arrow API Table
+        data = arrow(blob); // Vega-friendly objects for each row
+
+  // test that table and proxy objects match
+  testProxyMatch(test, table, data);
 
   // test reads and writes
-  const f = fields[0],
+  const datum = data[0],
+        f = table.schema.fields[0].name,
         g = f + '_new';
 
   // writes to existing columns should throw an error
@@ -38,6 +46,18 @@ tape('Arrow reader should read Apache Arrow data', function(test) {
   test.doesNotThrow(() => { datum[g] = 'foo'; });
   test.ok(datum.hasOwnProperty(g));
   test.equal(datum[g], 'foo');
+
+  test.end();
+});
+
+tape('Arrow reader should accept pre-parsed Table', function(test) {
+  const nrows = 20,
+        blob = generateArrowData(nrows),
+        table = Table.from([blob]), // Arrow API Table
+        data = arrow(table); // Vega-friendly objects for each row
+
+  // test that table and proxy objects match
+  testProxyMatch(test, table, data);
 
   test.end();
 });
