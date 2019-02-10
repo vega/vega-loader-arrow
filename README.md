@@ -46,7 +46,7 @@ Once vega-loader-arrow has been imported and registered, Vega specs can referenc
 }
 ```
 
-For more about the dataset above, see ["Introduction to Apache Arrow"](https://beta.observablehq.com/@theneuralbit/introduction-to-apache-arrow) by Brian Hulette!
+For more about the dataset above (concerning over 1.5M scrabble games!), see ["Introduction to Apache Arrow"](https://beta.observablehq.com/@theneuralbit/introduction-to-apache-arrow) by Brian Hulette.
 
 ## API Reference
 
