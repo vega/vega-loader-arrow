@@ -52,7 +52,7 @@ For more about the dataset above (concerning over 1.5M scrabble games!), see ["I
 
 <a name="arrow" href="#arrow">#</a>
 vega.format.<b>arrow</b>(<i>data</i>)
-[<>](https://github.com/vega/vega/blob/master/src/arrow.js "Source")
+[<>](https://github.com/vega/vega-loader-arrow/blob/master/src/arrow.js "Source")
 
 Returns an array of data objects for the input *data* in the Apache Arrow binary format. The input *data* should be either a buffer (e.g., `Uint8Array`) or an array of buffers containing Arrow-formatted data.
 
