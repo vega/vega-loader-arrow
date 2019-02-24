@@ -1,6 +1,6 @@
 {
   "name": "vega-loader-arrow",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Data loader for the Apache Arrow format.",
   "keywords": [
     "vega",
@@ -25,13 +25,13 @@
     "postpublish": "git push && git push --tags"
   },
   "dependencies": {
-    "apache-arrow": "~0.4.0"
+    "apache-arrow": "^0.4.0"
   },
   "devDependencies": {
-    "eslint": "^5.13.0",
+    "eslint": "^5.14.1",
     "rimraf": "^2.6.3",
-    "rollup": "^1.1.2",
-    "tape": "^4.10.0",
+    "rollup": "^1.2.3",
+    "tape": "^4.10.1",
     "terser": "^3.16.1"
   }
 }

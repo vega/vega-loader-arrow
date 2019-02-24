@@ -7,7 +7,9 @@ export default function arrow(data) {
         proxy = rowProxy(table),
         rows = Array(table.length);
 
-  table.scan(i => rows[i] = proxy(i));
+  for (let i=0, n=rows.length; i<n; ++i) {
+    rows[i] = proxy(i);
+  }
 
   return rows;
 }
@@ -15,14 +17,18 @@ export default function arrow(data) {
 arrow.responseType = 'arrayBuffer';
 
 function arrowTable(data) {
-  return data instanceof Table ? data
-    : Table.from(Array.isArray(data) ? data : [data]);
+  if (data instanceof Table) {
+    return data;
+  }
+  if (data instanceof ArrayBuffer) {
+    data = new Uint8Array(data);
+  }
+  return Table.from(Array.isArray(data) ? data : [data]);
 }
 
 function rowProxy(table) {
   const fields = table.schema.fields.map(d => d.name),
-        Row = function(index) { this[RowIndex] = index; },
-        proto = Row.prototype;
+        proto = {};
 
   fields.forEach((name, index) => {
     const column = table.getColumnAt(index);
@@ -41,5 +47,9 @@ function rowProxy(table) {
     });
   });
 
-  return i => new Row(i);
+  return i => {
+    const r = Object.create(proto);
+    r[RowIndex] = i;
+    return r;
+  };
 }
