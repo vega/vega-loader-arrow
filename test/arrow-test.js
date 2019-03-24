@@ -1,6 +1,6 @@
 const tape = require('tape'),
       {Table} = require('apache-arrow'),
-      {arrow} = require('../');
+      arrow = require('../');
 
 function testProxyMatch(test, table, data) {
   const datum = data[0],
