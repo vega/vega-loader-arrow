@@ -4,7 +4,7 @@ Data loading and object proxies for the [Apache Arrow](https://arrow.apache.org/
 
 This package extends Vega's set of data format parsers to support the type `"arrow"` in Vega version 5.0 and higher. It can also be used in a stand-alone fashion to create proxy objects representing each row in an Arrow table.
 
-You can try the Arrow loader in our Observable notebook examples for both [Vega](https://observablehq.com/@vega/vega-and-apache-arrow) and [Vega-Lite](https://observablehq.com/@vega/apache-arrow-in-vega-lite).
+You can try the Arrow loader in our Observable notebook examples for both [Vega](https://observablehq.com/@vega/vega-and-apache-arrow) and [Vega-](https://observablehq.com/@vega/apache-arrow-in-vega-lite)[Lite](https://observablehq.com/@randomfractals/chicago-crimes-arrow-data-vega-viz).
 
 ## Usage Instructions
 
