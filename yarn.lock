@@ -28,10 +28,10 @@
   resolved "https://registry.yarnpkg.com/@types/flatbuffers/-/flatbuffers-1.9.1.tgz#1910bebfc15c8f67a287fae07bfc061f94e9d291"
   integrity sha512-TC3X0Nkj5wgvuY217VkodBtjbD3Yr0JNApDY1GW9IU5Mzm5ie1IJErqe4vRm+wy08IRz3bemaDATrdEw1CJlVQ==
 
-"@types/node@^12.0.4", "@types/node@^12.7.4":
-  version "12.7.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.4.tgz#64db61e0359eb5a8d99b55e05c729f130a678b04"
-  integrity sha512-W0+n1Y+gK/8G2P/piTkBBN38Qc5Q1ZSO6B5H3QmPCUewaiXOo2GCAWZ4ElZCcNhjJuBSUSLGFUJnmlCn5+nxOQ==
+"@types/node@^12.0.4", "@types/node@^12.7.5":
+  version "12.7.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.5.tgz#e19436e7f8e9b4601005d73673b6dc4784ffcc2f"
+  integrity sha512-9fq4jZVhPNW8r+UYKnxF1e2HkDWOWKM5bC2/7c9wPV835I0aOrVbS/Hw/pWPk2uKrNXQqg9Z959Kz+IYDd5p3w==
 
 "@types/text-encoding-utf-8@^1.0.1":
   version "1.0.1"
@@ -884,12 +884,12 @@ rimraf@^3.0.0:
     glob "^7.1.3"
 
 rollup@^1.16.2:
-  version "1.21.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.21.1.tgz#b27a19b2bd0b3712bdfc76ef7357d915e1860c82"
-  integrity sha512-gM1EK/TsXES5xPYk7YG8VxM160DKMs2zSpSD3TBR1pdqYn/uKK85lJrsTIVXEYORR4xxzJdHzphkMFHRGNRxsw==
+  version "1.21.3"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.21.3.tgz#2d957e04b230b06a85b8c617bf594f92c37c4d5d"
+  integrity sha512-43CgeUtHhfiqBOUd0uJo5NEOg2FuheF3SqGN8BqgvnqB4xM2TbfPdudeSdllDcMKpagHb//qtpaAADBurT4GzA==
   dependencies:
     "@types/estree" "0.0.39"
-    "@types/node" "^12.7.4"
+    "@types/node" "^12.7.5"
     acorn "^7.0.0"
 
 run-async@^2.2.0:
