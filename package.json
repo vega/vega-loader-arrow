@@ -25,7 +25,7 @@
     "postpublish": "git push && git push --tags"
   },
   "dependencies": {
-    "apache-arrow": "^0.14.1"
+    "apache-arrow": "^0.15.0"
   },
   "devDependencies": {
     "eslint": "^6.0.0",
