@@ -25,13 +25,13 @@
     "postpublish": "git push && git push --tags"
   },
   "dependencies": {
-    "apache-arrow": "^0.17.0"
+    "apache-arrow": "^2.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.0.0",
+    "eslint": "^7.11.0",
     "rimraf": "^3.0.2",
-    "rollup": "^2.3.3",
-    "tape": "^5.0.0",
-    "terser": "^5.0.0"
+    "rollup": "^2.32.0",
+    "tape": "^5.0.1",
+    "terser": "^5.3.7"
   }
 }
