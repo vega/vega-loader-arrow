@@ -20,9 +20,7 @@
     "build": "yarn rollup",
     "postbuild": "terser build/vega-loader-arrow.js -c -m -o build/vega-loader-arrow.min.js",
     "pretest": "yarn prebuild && yarn rollup",
-    "test": "tape 'test/**/*-test.js' && eslint index.js src test",
-    "prepublishOnly": "yarn test && yarn build",
-    "postpublish": "git push && git push --tags"
+    "test": "tape 'test/**/*-test.js' && eslint index.js src test"
   },
   "dependencies": {
     "apache-arrow": "^2.0.0"

@@ -59,3 +59,7 @@ vega.format.<b>arrow</b>(<i>data</i>)
 Returns an array of data objects for the input *data* in the Apache Arrow binary format. The input *data* should be either a buffer (e.g., `Uint8Array`) or an array of buffers containing Arrow-formatted data.
 
 The returned data objects include properties for all named fields; property access results in a lookup against an underlying Arrow column. If the Arrow table includes multiple fields with the same name, the proxy object accesses the column with the lowest index. An error is thrown if a caller attempts to set values on named field properties. Writes to properties other than Arrow field names are supported, and will not affect the underlying Arrow data.
+
+## Making a release
+
+To make a release, tag a new version with `yarn version` and push the tag. GitHub actions will automatically make a release.
