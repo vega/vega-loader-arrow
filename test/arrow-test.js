@@ -37,7 +37,7 @@ tape('Arrow reader should read Apache Arrow data', function(test) {
   // test reads and writes
   const datum = data[0],
         f = table.schema.fields[0].name,
-        g = f + '_new';
+        g = `${f}_new`;
 
   // writes to existing columns should throw an error
   test.throws(() => { datum[f] = 0; });
