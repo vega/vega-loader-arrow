@@ -3,9 +3,9 @@ import {Table} from 'apache-arrow';
 const RowIndex = Symbol('rowIndex');
 
 export default function arrow(data) {
-  const table = arrowTable(data),
-        proxy = rowProxy(table),
-        rows = Array(table.length);
+  const table = arrowTable(data);
+  const proxy = rowProxy(table);
+  const rows = Array(table.length);
 
   for (let i=0, n=rows.length; i<n; ++i) {
     rows[i] = proxy(i);
@@ -27,8 +27,8 @@ function arrowTable(data) {
 }
 
 function rowProxy(table) {
-  const fields = table.schema.fields.map(d => d.name),
-        proto = {};
+  const fields = table.schema.fields.map(d => d.name);
+  const proto = {};
 
   fields.forEach((name, index) => {
     const column = table.getColumnAt(index);
