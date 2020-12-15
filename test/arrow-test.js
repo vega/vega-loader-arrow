@@ -1,11 +1,11 @@
-const tape = require('tape'),
-      {Table} = require('apache-arrow'),
-      arrow = require('../');
+const tape = require('tape');
+const {Table} = require('apache-arrow');
+const arrow = require('../');
 
 function testProxyMatch(test, table, data) {
-  const datum = data[0],
-        nrows = table.length,
-        fields = [];
+  const datum = data[0];
+  const nrows = table.length;
+  const fields = [];
 
   test.equal(data.length, nrows);
 
@@ -26,18 +26,19 @@ function testProxyMatch(test, table, data) {
 }
 
 tape('Arrow reader should read Apache Arrow data', function(test) {
-  const nrows = 20,
-        blob = generateArrowData(nrows),
-        table = Table.from([blob]), // Arrow API Table
-        data = arrow(blob); // Vega-friendly objects for each row
+  const nrows = 20;
+  const blob = generateArrowData(nrows);
+  const table = Table.from([blob]); // Arrow API Table
+  const data = arrow(blob); // Vega-friendly objects for each row
 
   // test that table and proxy objects match
   testProxyMatch(test, table, data);
 
   // test reads and writes
-  const datum = data[0],
-        f = table.schema.fields[0].name,
-        g = `${f}_new`;
+  const datum = data[0];
+
+  const f = table.schema.fields[0].name;
+  const g = `${f}_new`;
 
   // writes to existing columns should throw an error
   test.throws(() => { datum[f] = 0; });
@@ -51,10 +52,10 @@ tape('Arrow reader should read Apache Arrow data', function(test) {
 });
 
 tape('Arrow reader should accept pre-parsed Table', function(test) {
-  const nrows = 20,
-        blob = generateArrowData(nrows),
-        table = Table.from([blob]), // Arrow API Table
-        data = arrow(table); // Vega-friendly objects for each row
+  const nrows = 20;
+  const blob = generateArrowData(nrows);
+  const table = Table.from([blob]); // Arrow API Table
+  const data = arrow(table); // Vega-friendly objects for each row
 
   // test that table and proxy objects match
   testProxyMatch(test, table, data);
@@ -63,11 +64,11 @@ tape('Arrow reader should accept pre-parsed Table', function(test) {
 });
 
 tape('Arrow reader should handle non-unique column names', function(test) {
-  const nrows = 10,
-        blob = generateDuplicateArrowData(nrows),
-        table = Table.from([blob]), // Arrow API Table
-        data = arrow(blob), // Vega-friendly objects for each row
-        datum = data[0];
+  const nrows = 10;
+  const blob = generateDuplicateArrowData(nrows);
+  const table = Table.from([blob]); // Arrow API Table
+  const data = arrow(blob); // Vega-friendly objects for each row
+  const datum = data[0];
 
   test.equal(data.length, table.length);
 
