@@ -108,9 +108,9 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
     color-convert "^2.0.1"
 
 apache-arrow@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/apache-arrow/-/apache-arrow-4.0.0.tgz#29616f5b5959cf0b0a6e49f8aa060ea53d4429ba"
-  integrity sha512-Y1o9UfCVhh7IB+RPVbCx7SgF51SjvT9ZKxCtFU1eaqleFZNxj89mH2gvQia4uA197x158XDemTz9O+Rrv+f5tg==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/apache-arrow/-/apache-arrow-4.0.1.tgz#62e58caa46a6a41966478a19c492380c9efb1d66"
+  integrity sha512-DyF7GXCbSjsw4P5C8b+qW7OnJKa6w9mJI0mhV0+EfZbVZCmhfiF6ffqcnrI/kzBrRqn9hH/Ft9n5+m4DTbBJpg==
   dependencies:
     "@types/flatbuffers" "^1.10.0"
     "@types/node" "^14.14.37"
