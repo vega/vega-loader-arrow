@@ -1,11 +1,11 @@
-import {Table} from 'apache-arrow';
+import {Table, tableFromIPC} from 'apache-arrow';
 
 const RowIndex = Symbol('rowIndex');
 
 export default function arrow(data) {
   const table = arrowTable(data);
   const proxy = rowProxy(table);
-  const rows = Array(table.length);
+  const rows = Array(table.numRows);
 
   for (let i=0, n=rows.length; i<n; ++i) {
     rows[i] = proxy(i);
@@ -23,7 +23,7 @@ function arrowTable(data) {
   if (data instanceof ArrayBuffer) {
     data = new Uint8Array(data);
   }
-  return Table.from(Array.isArray(data) ? data : [data]);
+  return tableFromIPC(data);
 }
 
 function rowProxy(table) {
@@ -31,7 +31,7 @@ function rowProxy(table) {
   const proto = {};
 
   fields.forEach((name, index) => {
-    const column = table.getColumnAt(index);
+    const column = table.getChildAt(index);
 
     // skip columns with duplicate names
     if (proto.hasOwnProperty(name)) return;
