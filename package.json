@@ -28,7 +28,7 @@
   "devDependencies": {
     "eslint": "^8.3.0",
     "rimraf": "^3.0.2",
-    "rollup": "^2.45.2",
+    "rollup": "^3.2.5",
     "tape": "^5.2.2",
     "terser": "^5.7.0"
   }
