@@ -23,13 +23,13 @@
     "test": "tape 'test/**/*-test.js' && eslint index.js src test"
   },
   "dependencies": {
-    "apache-arrow": "^15.0.0"
+    "apache-arrow": "^15.0.1"
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "rimraf": "^5.0.5",
-    "rollup": "^4.9.3",
-    "tape": "^5.7.2",
-    "terser": "^5.26.0"
+    "rollup": "^4.12.1",
+    "tape": "^5.7.5",
+    "terser": "^5.29.1"
   }
 }
