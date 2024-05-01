@@ -314,10 +314,10 @@ ansi-styles@^6.1.0:
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-6.2.1.tgz#0e62320cf99c21afff3b3012192546aacbfb05c5"
   integrity sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==
 
-apache-arrow@^15.0.1:
-  version "15.0.2"
-  resolved "https://registry.yarnpkg.com/apache-arrow/-/apache-arrow-15.0.2.tgz#d87c6447d64d6fab34aa70119362680b6617ce63"
-  integrity sha512-RvwlFxLRpO405PLGffx4N2PYLiF7FD86Q1hHl6J2XCWiq+tTCzpb9ngFw0apFDcXZBMpCzMuwAvA7hjyL1/73A==
+apache-arrow@^16.0.0:
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/apache-arrow/-/apache-arrow-16.0.0.tgz#7f13cdf6dc22e290a43c53666035bf82d28da804"
+  integrity sha512-bVyJeV4ahJW4XYjXefSBco0/mSSSElOzzh3Qx7tsKH+94sZaHrRotKKj1xVjON1hMUm7TODi6DnbFE73Q2h2MA==
   dependencies:
     "@swc/helpers" "^0.5.2"
     "@types/command-line-args" "^5.2.1"
