@@ -23,7 +23,7 @@
     "test": "tape 'test/**/*-test.js' && eslint index.js src test"
   },
   "dependencies": {
-    "apache-arrow": "^16.0.0"
+    "apache-arrow": "^17.0.0"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
