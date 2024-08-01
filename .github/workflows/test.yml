@@ -17,6 +17,8 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v4
+        with:
+          node-version: '22'
 
       - name: Install Node dependencies
         run: yarn --frozen-lockfile
