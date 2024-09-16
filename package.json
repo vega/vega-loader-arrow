@@ -1,7 +1,7 @@
 {
   "name": "vega-loader-arrow",
   "type": "module",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Data loader for the Apache Arrow format.",
   "keywords": [
     "vega",
