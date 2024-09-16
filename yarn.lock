@@ -307,10 +307,10 @@
   resolved "https://registry.yarnpkg.com/@types/resolve/-/resolve-1.20.2.tgz#97d26e00cd4a0423b4af620abecf3e6f442b7975"
   integrity sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==
 
-"@uwdata/flechette@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@uwdata/flechette/-/flechette-1.0.0.tgz#63051c8f44c5b8454bdb24cb4c35fd1c12d86742"
-  integrity sha512-REQiIMDCjMo6KnSVl+GK8jccnJ4Z5CSzeHeyeuxVBTXgGzAPUxem7et084lyy6Hs5lC0LK0wxPEBWivNNXtusQ==
+"@uwdata/flechette@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@uwdata/flechette/-/flechette-1.0.2.tgz#bccf34d35fdf81c2ea8f349aabaa4d736f5b54b3"
+  integrity sha512-N8A3VQb1sqR6LmSWkUF9/Az0KiWKZmCC9bR2u0gDMAHE4eHrMwyuri6Mw3Wfpsm4o2DUb28ywooqfTQ9LFP2DQ==
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
