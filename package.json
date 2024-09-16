@@ -1,6 +1,7 @@
 {
   "name": "vega-loader-arrow",
-  "version": "0.2.0",
+  "type": "module",
+  "version": "0.3.0",
   "description": "Data loader for the Apache Arrow format.",
   "keywords": [
     "vega",
@@ -9,27 +10,27 @@
   ],
   "license": "BSD-3-Clause",
   "author": "Jeffrey Heer (http://idl.cs.washington.edu)",
-  "main": "build/vega-loader-arrow.js",
-  "module": "index",
+  "module": "src/index.js",
+  "main": "build/vega-loader-arrow.cjs",
   "unpkg": "build/vega-loader-arrow.min.js",
   "jsdelivr": "build/vega-loader-arrow.min.js",
   "repository": "vega/vega-loader-arrow",
   "scripts": {
-    "rollup": "rollup -f umd -g apache-arrow:Arrow -n vega.format.arrow -o build/vega-loader-arrow.js -- index.js",
     "prebuild": "rimraf build && mkdir build",
-    "build": "yarn rollup",
-    "postbuild": "terser build/vega-loader-arrow.js -c -m -o build/vega-loader-arrow.min.js",
-    "pretest": "yarn prebuild && yarn rollup",
-    "test": "tape 'test/**/*-test.js' && eslint index.js src test"
+    "build": "rollup -c rollup.config.js",
+    "pretest": "yarn build",
+    "test": "tape 'test/**/*-test.js' && eslint src test"
   },
   "dependencies": {
-    "apache-arrow": "^17.0.0"
+    "@uwdata/flechette": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "apache-arrow": "^17.0.0",
+    "eslint": "^9.10.0",
     "rimraf": "^6.0.1",
-    "rollup": "^4.12.1",
-    "tape": "^5.7.5",
-    "terser": "^5.29.1"
+    "rollup": "^4.21.2",
+    "tape": "^5.8.1"
   }
 }
