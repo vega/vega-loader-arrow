@@ -317,9 +317,9 @@
   integrity sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==
 
 "@uwdata/flechette@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@uwdata/flechette/-/flechette-1.0.2.tgz#bccf34d35fdf81c2ea8f349aabaa4d736f5b54b3"
-  integrity sha512-N8A3VQb1sqR6LmSWkUF9/Az0KiWKZmCC9bR2u0gDMAHE4eHrMwyuri6Mw3Wfpsm4o2DUb28ywooqfTQ9LFP2DQ==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@uwdata/flechette/-/flechette-1.1.0.tgz#28d483c1ae0429035b1f5bd789847fc7484d03fb"
+  integrity sha512-UG25ytXRsElGDSIsvCuEUUkX/XImdKe7jnZF2Y5Q9uYYQH6WO60F7yLJ/sNRBJqHdn4A0QhTAOuOJevDZZcF8Q==
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
