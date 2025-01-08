@@ -18,8 +18,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           node-version: '22'
       - name: Install Node dependencies
-        run: yarn --frozen-lockfile
-      - run: yarn build
+        run: npm i
+      - run: npm run build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
