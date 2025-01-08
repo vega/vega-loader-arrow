@@ -61,4 +61,4 @@ The returned data objects include properties for all named fields; property acce
 
 ## Making a release
 
-To make a release, tag a new version with `yarn version` and push the tag. GitHub actions will automatically make a release.
+To make a release, tag a new version with `npm version XXX` and push the tag. GitHub actions will automatically make a release.
