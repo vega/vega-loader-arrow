@@ -22,7 +22,7 @@
     "test": "tape 'test/**/*-test.js' && eslint src test"
   },
   "dependencies": {
-    "@uwdata/flechette": "^1.1.1"
+    "@uwdata/flechette": "^2.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^16.0.0",
