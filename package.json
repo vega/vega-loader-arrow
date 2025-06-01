@@ -27,7 +27,7 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
-    "apache-arrow": "^19.0.0",
+    "apache-arrow": "^20.0.0",
     "eslint": "^9.17.0",
     "rimraf": "^6.0.1",
     "rollup": "^4.30.1",
