@@ -1,6 +1,5 @@
 {
   "name": "vega-loader-arrow",
-  "type": "module",
   "version": "0.3.2",
   "description": "Data loader for the Apache Arrow format.",
   "keywords": [
@@ -10,8 +9,10 @@
   ],
   "license": "BSD-3-Clause",
   "author": "Jeffrey Heer (http://idl.cs.washington.edu)",
-  "module": "src/index.js",
-  "main": "build/vega-loader-arrow.cjs",
+  "type": "module",
+  "exports": {
+    "default": "./build/index.js"
+  },
   "unpkg": "build/vega-loader-arrow.min.js",
   "jsdelivr": "build/vega-loader-arrow.min.js",
   "repository": "vega/vega-loader-arrow",

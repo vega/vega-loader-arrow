@@ -24,8 +24,8 @@ Import the vega-loader-arrow package _after_ Vega has been imported. For example
 In the web browser case above, the Arrow data reader is automatically added to the `vega.format` data format registry. If you are instead importing the `vega-loader-arrow` package in node.js or for use in an application bundle, you will need to explicitly register the package:
 
 ```js
-const arrow = require('vega-loader-arrow');
-const { formats } = require('vega');
+import arrow from 'vega-loader-arrow';
+import vega from 'vega';
 
 // register arrow reader under type 'arrow'
 formats('arrow', arrow);

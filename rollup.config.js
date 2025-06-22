@@ -1,27 +1,25 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 
-const name = 'vega.format.arrow';
-const plugins = [
-  nodeResolve({ modulesOnly: true })
-];
+import pkg from './package.json' with {type: 'json'};
 
-export default [
-  {
-    input: 'src/index.js',
-    plugins,
-    output: [
-      {
-        file: 'build/vega-loader-arrow.cjs',
-        format: 'cjs'
-      },
-      {
-        file: 'build/vega-loader-arrow.min.js',
-        format: 'umd',
-        sourcemap: true,
-        plugins: [ terser({ ecma: 2018 }) ],
-        name
-      }
-    ]
+export default [{
+  input: 'src/index.js',
+  plugins: [nodeResolve({ modulesOnly: true })],
+  external: Object.keys(pkg.dependencies),
+  output: {
+    file: pkg.exports.default,
+    format: 'esm',
+    sourcemap: true,
   }
-];
+}, {
+  input: 'src/index.js',
+  plugins: [nodeResolve({ modulesOnly: true }), terser({ ecma: 2018 })],
+  output: {
+    file: 'build/vega-loader-arrow.min.js',
+    format: 'umd',
+    sourcemap: true,
+    name: 'vega.format.arrow',
+  }
+}];
+
