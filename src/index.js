@@ -13,7 +13,7 @@ export default function arrow(data) {
 }
 
 function isArrowTable(data) {
-  return data && data.schema && Array.isArray(data.schema.fields)
+  return data?.schema && Array.isArray(data.schema.fields)
     && typeof data.toArray === 'function';
 }
 
