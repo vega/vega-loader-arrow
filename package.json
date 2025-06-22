@@ -11,7 +11,7 @@
   "author": "Jeffrey Heer (http://idl.cs.washington.edu)",
   "type": "module",
   "exports": {
-    "default": "./build/index.js"
+    "default": "./src/index.js"
   },
   "unpkg": "build/vega-loader-arrow.min.js",
   "jsdelivr": "build/vega-loader-arrow.min.js",
