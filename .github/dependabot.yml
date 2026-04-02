@@ -3,10 +3,10 @@ updates:
 - package-ecosystem: npm
   directory: "/"
   schedule:
-    interval: monthly
+    interval: quarterly
     day: sunday
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
-    interval: monthly
+    interval: quarterly
     day: sunday
